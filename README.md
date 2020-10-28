@@ -39,3 +39,4 @@ php artisan key:generate
 ```sh
 php artisan migrate
 ```
+### 8. php artisan serv
