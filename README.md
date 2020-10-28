@@ -11,7 +11,7 @@ git clone https://github.com/kaori02/mid-exam-webpro-e
 ### 2. Install Composer
 
 ```sh
-cd ETS; composer install
+cd mid-exam-webpro-e; composer install
 ```
 
 ### 3. Install Node Module
