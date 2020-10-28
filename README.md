@@ -39,8 +39,9 @@ php artisan key:generate
 ```sh
 php artisan migrate
 ```
-### 8. Php Artisan
+
+### 8. Run Web On Your Local
 
 ```sh
-php artisan serv
+php artisan serve
 ```
