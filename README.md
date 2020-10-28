@@ -26,7 +26,7 @@ npm install && npm run dev
 - Copy everything from `.env.example` to `.env`
 - Change `DB_DATABASE=laravel` to `DB_DATABASE=mid_exam_webpro_e`
 
-### 5. Create db named 'ets' on your local
+### 5. Create db named 'mid_exam_webpro_e' on your local
 
 ### 6. create key
 
@@ -39,4 +39,8 @@ php artisan key:generate
 ```sh
 php artisan migrate
 ```
-### 8. php artisan serv
+### 8. Php Artisan
+
+```sh
+php artisan serv
+```
