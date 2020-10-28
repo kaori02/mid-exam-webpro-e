@@ -5,7 +5,7 @@
 ### 1. Clone This Repo
 
 ```sh
-git clone https://github.com/kaori02/ETS
+git clone https://github.com/kaori02/mid-exam-webpro-e
 ```
 
 ### 2. Install Composer
@@ -23,8 +23,8 @@ npm install && npm run dev
 ### 4. Create .env file
 
 - Create `.env` file
-- Copy everything from `.env.example` to there
-- Change `DB_DATABASE=laravel` to `DB_DATABASE=ets`
+- Copy everything from `.env.example` to `.env`
+- Change `DB_DATABASE=laravel` to `DB_DATABASE=mid_exam_webpro_e`
 
 ### 5. Create db named 'ets' on your local
 
