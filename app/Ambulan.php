@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ambulan extends Model
 {
+    protected $table = 'ambulans';
+    public $primaryKey = 'id_ambulan';
 
-
+    public function PoskoKesehatan(){
+        return $this->belongsTo('App\Posko_Kesehatan');
+    }
 }

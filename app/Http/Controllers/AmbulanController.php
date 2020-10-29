@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ambulan;
+use App\Posko_Kesehatan;
 
 class AmbulanController extends Controller
 {
@@ -14,8 +15,15 @@ class AmbulanController extends Controller
      */
     public function index()
     {
-        $ambulans = Ambulan::all();
-        return view('ambulans.index')->with('ambulans', $ambulans);
+        $ambulan = Ambulan::all()->random();
+        $posko = Posko_Kesehatan::find($ambulan->id_posko);
+
+        return view('ambulans.index', compact('ambulan','posko'));
+    }
+
+    public function admin()
+    {
+        return view('ambulans.admin');
     }
 
     /**
@@ -47,7 +55,8 @@ class AmbulanController extends Controller
      */
     public function show($id)
     {
-        //
+        // $ambulan = Ambulan::find($id);
+        // return view('ambulans/show')->with('ambulan',$ambulan);
     }
 
     /**
@@ -58,7 +67,8 @@ class AmbulanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ambulan = Ambulan::find($id);
+        return view('ambulans/edit')->with('ambulan',$ambulan);
     }
 
     /**
@@ -70,7 +80,17 @@ class AmbulanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'id_posko' => 'required'
+        ]);
+        
+
+        //create artikel
+        $ambulan = Ambulan::find($id);
+        $ambulan->id_posko = $request->input('id_posko');
+        $ambulan->save();
+
+        return redirect('/ambulans/admin')->with('Success',"Ambulan Diperbarui");
     }
 
     /**

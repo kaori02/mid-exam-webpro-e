@@ -45,15 +45,15 @@
         <div class="menu-logo">
             <div class="navbar-brand">
                 
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="index.html">
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="/">
                         SISCO</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="ambulance.html">Hubungi Ambulance</a>
+                    <a class="nav-link link text-white display-4" href="/ambulans">Hubungi Ambulance</a>
                 </li>
-                <li class="nav-item"><a class="nav-link link text-white display-4" href="artikel.html">Artikel Kesehatan</a></li><li class="nav-item">
+                <li class="nav-item"><a class="nav-link link text-white display-4" href="/artikels">Artikel Kesehatan</a></li><li class="nav-item">
                     <a class="nav-link link text-white display-4" href="posko.html">Data Posko</a>
                 </li><li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="daftar.html">
                         Pendaftaran Relawan</a></li></ul>
@@ -101,8 +101,23 @@
             <div class="col-12 col-lg">
                 <div class="text-wrapper">
                     <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Ambulance Ditemukan</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7"></p><p></p><p>
-                        Nama Posko :</p><p>Alamat :</p>No. Telepon :<p></p><p>Id Ambulance :</p><p>Nomor Polisi :</p><p></p>
+                    <p class="mbr-text mbr-fonts-style display-7"></p><p></p>
+                    <p>
+                        Nama Posko : {{$posko->nama_posko}}
+                    </p>
+                    <p>
+                        Alamat : {{$posko->alamat_kesehatan}}
+                    </p>
+                    <p>
+                        No. Telepon : {{$posko->no_telp_kesehatan}}
+                    </p>
+                    <p>
+                        Id Ambulance : {{$ambulan->id_ambulan}}
+                    </p>
+                    <p>
+                        Nomor Polisi : {{$ambulan->NoPol}}
+                    </p>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -137,8 +152,6 @@
                     <strong>Links</strong>
                     <br>
                     <br><a class="text-primary" href="https://mobiri.se/">Website builder</a>
-                    <br><a class="text-primary" href="https://mobiri.se/">Download for Windows</a>
-                    <br><a class="text-primary" href="https://mobiri.se/">Download for Mac</a>
                     <br>
                     <br><strong>Feedback</strong>
                     <br>

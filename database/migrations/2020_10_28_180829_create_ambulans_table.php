@@ -18,6 +18,7 @@ class CreateAmbulansTable extends Migration
             // $table->timestamp('added_on')
             $table->unsignedBigInteger('id_posko');
             $table->foreign('id_posko')->references('id_posko')->on('posko__kesehatans');
+            $table->string('NoPol',10);
         });
     }
     /**

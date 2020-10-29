@@ -11,7 +11,7 @@
         <div class="container">
             @include('inc.messages')
             <h1>Buat Artikel</h1>
-            {!! Form::open(['action' => 'ArtikelController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+            {!! Form::open(['action' => 'AmbulanController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                 <div class="form-group">
                     {{Form::label('title_artikel', 'Judul')}}
                     {{Form::text('title_artikel', '', ['class' => 'form-control', 'placeholder' => 'Judul'])}}
@@ -26,9 +26,5 @@
                 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
             {!! Form::close() !!}
         </div>
-        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-        <script>
-            CKEDITOR.replace( 'article-ckeditor' );
-        </script>
     </body>
 </html>

@@ -12,6 +12,12 @@ class ArtikelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth',['except' => ['index','show']]);
+    }
+
     public function index()
     {
         //$artikels = Artikel::all();
@@ -41,13 +47,38 @@ class ArtikelController extends Controller
     {
         $this->validate($request,[
             'title_artikel' => 'required',
-            'body_artikel' => 'required'
+            'body_artikel' => 'required',
+            'cover_image' => 'image|nullable|max:1999',
         ]);
+        
+        //Handle file upload
+        if($request->hasFile('cover_image'))
+        {
+            //Get filename with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            //Get just extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+            //Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            //Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        }
+        else
+        {
+            $fileNameToStore = 'noimage.jpg';
+        }
 
         //create adrtikel
         $artikel = new Artikel;
         $artikel->title_artikel = $request->input('title_artikel');
         $artikel->body_artikel = $request->input('body_artikel');
+        $artikel->cover_image = $fileNameToStore;
         $artikel->save();
 
         return redirect('/artikels')->with('Success',"Artikel Ditambah");
@@ -90,14 +121,35 @@ class ArtikelController extends Controller
             'title_artikel' => 'required',
             'body_artikel' => 'required'
         ]);
+        
+        if($request->hasFile('cover_image'))
+        {
+            //Get filename with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            //Get just extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+
+            //Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            //Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        }
 
         //create adrtikel
         $artikel = Artikel::find($id);
         $artikel->title_artikel = $request->input('title_artikel');
         $artikel->body_artikel = $request->input('body_artikel');
+        if($request->hasFile('cover_image')){
+            $artikel->cover_image = $fileNameToStore;
+        }
         $artikel->save();
 
-        return redirect('/artikels')->with('Success',"Artikel Tersunting");
+        return redirect('/artikels')->with('Success',"Artikel Diperbarui");
     }
 
     /**
@@ -109,6 +161,14 @@ class ArtikelController extends Controller
     public function destroy($id)
     {
         $artikel = Artikel::find($id);
+
+        if($artikel->cover_image != 'noimage.jpg')
+        {
+            //delete image
+            Storage::delete('public/cover_images/'.$post->cover_image);
+        }
+
+
         $artikel->delete();
         return redirect('/artikels')->with('Success',"Artikel Terhapus");
     }
