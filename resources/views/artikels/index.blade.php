@@ -98,7 +98,7 @@
                     <div class="text-wrapper">
                         <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">
                         <strong><a href="/artikels/{{$artikel->id_artikel}}">{{$artikel->title_artikel}}</a></strong></h5>
-                        <small>Ditulis pada {{$artikel->created_at}} by {{$artikel->user->name}}</small>
+                        <small>Ditulis pada {{$artikel->created_at}}</small>
                         {{-- <p class="mbr-text mbr-fonts-style display-7"></p>
                         <p>{{$artikel->body_artikel}}</p> --}}
                     </div>
