@@ -107,8 +107,6 @@
             @endforeach
             {{$artikels->links()}}
         @else
-        <p>Artikel tidak ditemukan</p>
-
         <div class="row align-items-center">
             <div class="col-12 col-lg">
                 <div class="text-wrapper">
