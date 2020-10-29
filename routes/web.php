@@ -20,3 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Kode kita mulai dari sini
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+
+Route::get('/ets','PagesController@index');
+Route::get('/contact','PagesController@contact');
+
+Route::resource('ambulans', 'AmbulanController');
+Route::resource('artikels', 'ArtikelController');
+Route::resource('laporans', 'LaporanController');
+Route::resource('posko_kesehatans', 'PoskoKesehatanController');
+
