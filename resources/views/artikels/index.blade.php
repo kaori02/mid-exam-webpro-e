@@ -86,6 +86,7 @@
         <div class="title-wrapper mb-5">
             
         </div>
+        @include('inc.messages')
         @if(count($artikels) > 0)
             @foreach ($artikels as $artikel)
                 
@@ -97,7 +98,7 @@
                     <div class="text-wrapper">
                         <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">
                         <strong><a href="/artikels/{{$artikel->id_artikel}}">{{$artikel->title_artikel}}</a></strong></h5>
-                        <small>Ditulis {{$artikel->created_at}}</small>
+                        <small>Ditulis pada {{$artikel->created_at}} by {{$artikel->user->name}}</small>
                         {{-- <p class="mbr-text mbr-fonts-style display-7"></p>
                         <p>{{$artikel->body_artikel}}</p> --}}
                     </div>
@@ -107,6 +108,14 @@
             {{$artikels->links()}}
         @else
         <p>Artikel tidak ditemukan</p>
+
+        <div class="row align-items-center">
+            <div class="col-12 col-lg">
+                <div class="text-wrapper">
+                    <p class="mbr-text mbr-fonts-style display-7">COMING SOON...</p>
+                </div>
+            </div>
+        </div>
         @endif
     </div>
 </section>
