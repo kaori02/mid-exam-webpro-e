@@ -17,9 +17,7 @@ class CreateArtikelsTable extends Migration
             $table->id("id_artikel");
             $table->string('title_artikel');
             $table->longText('body_artikel');
-            $table->smallInteger('is_published')->nullable();
-            $table->integer('index_article');
-            $table->timestamp('added_on');
+            $table->timestamps();
         });
     }
 

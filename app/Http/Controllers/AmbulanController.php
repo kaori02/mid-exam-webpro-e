@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ambulan;
 
 class AmbulanController extends Controller
 {
@@ -13,7 +14,8 @@ class AmbulanController extends Controller
      */
     public function index()
     {
-        //
+        $ambulans = Ambulan::all();
+        return view('ambulans.index')->with('ambulans', $ambulans);
     }
 
     /**

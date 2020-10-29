@@ -16,7 +16,7 @@ class CreateLaporansTable extends Migration
         Schema::create('laporans', function (Blueprint $table) {
             $table->id('id_laporan');
             $table->string('nama_laporan');
-            $table->timestamp('tanggal_laporan');
+            $table->timestamps();
         });
     }
 

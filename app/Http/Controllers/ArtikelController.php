@@ -17,7 +17,7 @@ class ArtikelController extends Controller
         //$artikels = Artikel::all();
         //$artikels = select('SELECT * FROM artikels');
         //$artikels = Artikel::orderBy('added_on','desc')->take(3)->get();
-        $artikels = Artikel::orderBy('added_on','desc')->paginate(3);
+        $artikels = Artikel::orderBy('created_at','desc')->paginate(3);
         return view('artikels.index')->with('artikels', $artikels);
     }
 
@@ -39,7 +39,18 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'title_artikel' => 'required',
+            'body_artikel' => 'required'
+        ]);
+
+        //create adrtikel
+        $artikel = new Artikel;
+        $artikel->title_artikel = $request->input('title_artikel');
+        $artikel->body_artikel = $request->input('body_artikel');
+        $artikel->save();
+
+        return redirect('/artikels')->with('Success',"Artikel Ditambah");
     }
 
     /**
@@ -62,7 +73,8 @@ class ArtikelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $artikel = Artikel::find($id);
+        return view('artikels/edit')->with('artikel',$artikel);
     }
 
     /**
@@ -74,7 +86,18 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title_artikel' => 'required',
+            'body_artikel' => 'required'
+        ]);
+
+        //create adrtikel
+        $artikel = Artikel::find($id);
+        $artikel->title_artikel = $request->input('title_artikel');
+        $artikel->body_artikel = $request->input('body_artikel');
+        $artikel->save();
+
+        return redirect('/artikels')->with('Success',"Artikel Tersunting");
     }
 
     /**
@@ -85,6 +108,8 @@ class ArtikelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $artikel = Artikel::find($id);
+        $artikel->delete();
+        return redirect('/artikels')->with('Success',"Artikel Terhapus");
     }
 }

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('inc.messages')
 
 @section('content')
     <h1>Artikel</h1>
@@ -7,7 +8,7 @@
             <div class="wadah">
             <h3><a href="/artikels/{{$artikel->id_artikel}}">{{$artikel->title_artikel}}</a></h3>
                 <p>{{$artikel->body_artikel}}</p>
-                <small>Ditulis {{$artikel->added_on}}</small>
+                <small>Ditulis {{$artikel->created_at}}</small>
             </div>
         @endforeach
         {{$artikels->links()}}
