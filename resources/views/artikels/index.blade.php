@@ -14,4 +14,5 @@
     @else
         <p>Artikel tidak ditemukan</p>
     @endif
+    <h3><a class="btn btn-primary" href="/artikels/create">Tulis Artikel baru!</a></h3>
 @endsection
