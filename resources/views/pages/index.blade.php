@@ -98,7 +98,7 @@
                         <div class="card-img">
                             <div class="mbr-overlay"></div>
                         <div class="mbr-section-btn text-center"><a href="{{url('artikels')}}" class="btn btn-black display-4">Learn More</a></div>
-                        <img src="/storage/cover_img/{{$item->cover_img}}" alt="Mobirise">
+                        <img src="/storage/cover_images/{{$item->cover_image}}" alt="Mobirise">
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">
