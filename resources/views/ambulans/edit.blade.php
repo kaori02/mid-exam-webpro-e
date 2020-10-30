@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
     <h1>Edit Ambulans</h1>
