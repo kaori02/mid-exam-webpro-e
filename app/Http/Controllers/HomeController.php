@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Artikel;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('admin')->with('artikels', $user->artikels);
     }
 }
