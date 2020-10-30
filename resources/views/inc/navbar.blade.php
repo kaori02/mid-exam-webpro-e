@@ -18,17 +18,45 @@
             <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item">
-                  <a class="nav-link" href="/artikels">Artikel</a>
+
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Artikel<span class="caret"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/artikels">Lihat Artikel</a>
+                    <a class="dropdown-item" href="/artikels/create">Buat Artikel</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/laporans/create">Laporan</a>
+
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Laporan<span class="caret"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/laporans">Lihat Laporan</a>
+                    <a class="dropdown-item" href="/laporans/create">Buat Laporan</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/ambulan/create">Ambulan</a>
+
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Ambulan<span class="caret"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/ambulans">Panggil Ambulance</a>
+                    <a class="dropdown-item" href="/ambulans/create">Tambahkan Ambulance</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/relawan">Relawan</a>
+
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Relawan<span class="caret"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/relawans/create">Pendaftaran Relawan</a>
+                    <a class="dropdown-item" href="/relawans">Daftar Relawan Artikel</a>
+                </div>
             </li>
           </ul>
 

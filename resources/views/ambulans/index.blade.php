@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/sisco-128x128-1.png" type="image/x-icon">
+  <link rel="shortcut icon" href="{{asset('assets/images/sisco-128x128-1.png')}}" type="image/x-icon">
   <meta name="description" content="This is a ambulance page of SISCO">
 
 
   <title>SISCO | Hubungi Ambulance</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/facebook-plugin/style.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.min.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons/mobirise-icons.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/facebook-plugin/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/tether/tether.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/dropdown/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/animatecss/animate.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
+  <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}"><link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
 
 
 
@@ -93,7 +93,7 @@
         <div class="row align-items-center">
             <div class="col-12 col-lg-7">
                 <div class="image-wrapper">
-                    <img src="assets/images/4.jpg" alt="Mobirise">
+                    <img src="{{asset('assets/images/4.jpg')}}" alt="Mobirise">
                     <p class="mbr-description mbr-fonts-style pt-2 align-center display-5">
                     CALL AMBULANCE</p>
                 </div>
@@ -217,7 +217,7 @@
             </div>
         </div>
     </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/r" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://mobirise.site" style="color:#aaa;">mobirise.com</a> easy website builder</p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>  <script src="https://apis.google.com/js/plusone.js"></script>  <script src="assets/facebook-plugin/facebook-script.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>  <script src="assets/parallax/jarallax.min.js"></script>  <script src="assets/theme/js/script.js"></script>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/r" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://mobirise.site" style="color:#aaa;">mobirise.com</a> easy website builder</p></section><script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script>  <script src="{{asset('assets/popper/popper.min.js')}}"></script>  <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>  <script src="https://apis.google.com/js/plusone.js"></script>  <script src="{{asset('assets/facebook-plugin/facebook-script.js')}}"></script>  <script src="{{asset('assets/tether/tether.min.js')}}"></script>  <script src="{{asset('assets/smoothscroll/smooth-scroll.js')}}"></script>  <script src="{{asset('assets/dropdown/js/nav-dropdown.js')}}"></script>  <script src="{{asset('assets/dropdown/js/navbar-dropdown.js')}}"></script>  <script src="{{asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script>  <script src="{{asset('assets/viewportchecker/jquery.viewportchecker.js')}}"></script>  <script src="{{asset('assets/parallax/jarallax.min.js')}}"></script>  <script src="{{asset('assets/theme/js/script.js')}}"></script>
 
 
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>

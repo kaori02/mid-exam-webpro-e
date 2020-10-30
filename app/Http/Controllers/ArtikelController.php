@@ -50,7 +50,7 @@ class ArtikelController extends Controller
             'body_artikel' => 'required',
             'cover_image' => 'image|nullable|max:1999',
         ]);
-        
+
         //Handle file upload
         if($request->hasFile('cover_image'))
         {
@@ -79,6 +79,7 @@ class ArtikelController extends Controller
         $artikel->title_artikel = $request->input('title_artikel');
         $artikel->body_artikel = $request->input('body_artikel');
         $artikel->cover_image = $fileNameToStore;
+        $artikel->user_id = auth()->user()->id;
         $artikel->save();
 
         return redirect('/artikels')->with('Success',"Artikel Ditambah");
@@ -121,7 +122,7 @@ class ArtikelController extends Controller
             'title_artikel' => 'required',
             'body_artikel' => 'required'
         ]);
-        
+
         if($request->hasFile('cover_image'))
         {
             //Get filename with the extension

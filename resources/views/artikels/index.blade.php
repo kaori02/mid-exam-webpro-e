@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="{{asset('assets/images/sisco-128x128-1.png')}}" type="image/x-icon">
   <meta name="description" content="This is a ambulance page of SISCO">
-  
-  
+
+
   <title>SISCO | Artikel Kesehatan</title>
   <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons/mobirise-icons.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
@@ -24,10 +24,10 @@
   <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}"><link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
 </head>
 <body>
-  
+
   <section class="menu cid-seOs3rgjMf" once="menu" id="menu2-2n">
 
-    
+
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
         </button>
         <div class="menu-logo">
             <div class="navbar-brand">
-                
+
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="/">
                         SISCO</a></span>
             </div>
@@ -53,14 +53,14 @@
                     <a class="nav-link link text-white display-4" href="/posko">Data Posko</a>
                 </li><li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="daftar.html">
                         Pendaftaran Relawan</a></li></ul>
-            
+
         </div>
     </nav>
 </section>
 
 <section class="header1 cid-seOs3rwYpK mbr-parallax-background" id="header1-2o">
 
-    
+
 
     <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
     </div>
@@ -71,8 +71,8 @@
                 <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
                     Artikel Kesehatan</h1>
                 <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">Dapatkan informasi terkini mengenai pandemi serta tips kesehatan lainnya</h3>
-                
-                
+
+
             </div>
         </div>
     </div>
@@ -80,16 +80,16 @@
 </section>
 
 <section class="video4 cid-seOsQZdSTD" id="video4-2r">
-    
-    
+
+
     <div class="container">
         <div class="title-wrapper mb-5">
-            
+
         </div>
         @include('inc.messages')
         @if(count($artikels) > 0)
             @foreach ($artikels as $artikel)
-                
+
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6 video-block">
                     <div class="video-wrapper"><img src="/storage/cover_images/{{$artikel->cover_image}}" alt=""></div>
@@ -120,9 +120,9 @@
 
 <section class="cid-seOAOdaggi" id="footer2-31">
 
-    
 
-    
+
+
 
     <div class="container">
         <div class="media-container-row content mbr-white">
@@ -207,9 +207,9 @@
             </div>
         </div>
     </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/v" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Site was <a href="https://mobirise.site/h" style="color:#aaa;">created with</a> Mobirise</p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>  <script src="https://apis.google.com/js/plusone.js"></script>  <script src="assets/facebook-plugin/facebook-script.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>  <script src="assets/parallax/jarallax.min.js"></script>  <script src="assets/playervimeo/vimeo_player.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/v" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Site was <a href="https://mobirise.site/h" style="color:#aaa;">created with</a> Mobirise</p></section><script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script>  <script src="{{asset('assets/popper/popper.min.js')}}"></script>  <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>  <script src="https://apis.google.com/js/plusone.js"></script>  <script src="{{asset('assets/facebook-plugin/facebook-script.js')}}"></script>  <script src="{{asset('assets/tether/tether.min.js')}}"></script>  <script src="{{asset('assets/smoothscroll/smooth-scroll.js')}}"></script>  <script src="{{asset('assets/dropdown/js/nav-dropdown.js')}}"></script>  <script src="{{asset('assets/dropdown/js/navbar-dropdown.js')}}"></script>  <script src="{{asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script>  <script src="{{asset('assets/viewportchecker/jquery.viewportchecker.js')}}"></script>  <script src="{{asset('assets/parallax/jarallax.min.js')}}"></script>  <script src="{{asset('assets/playervimeo/vimeo_player.js')}}"></script>  <script src="{{asset('assets/theme/js/script.js')}}"></script>
+
+
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
   </body>
