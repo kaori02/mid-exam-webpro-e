@@ -113,6 +113,14 @@
                 </p>
             </div>
         </div>
+        @if(!Auth::guest())
+            <br><br><br><br>
+            <a href="/artikels/{{$artikel->id_artikel}}/edit" class="btn btn-primary display-4">EDIT</a>
+            {!!Form::open(['action' => ['ArtikelController@destroy', $artikel->id_artikel], 'method' => 'POST', 'class' => 'float-right'])!!}
+                    {{Form::hidden('_method', 'DELETE')}}
+                    {{Form::submit('Delete', ['class' => 'btn btn-secondary display-4'])}}
+            {!!Form::close() !!}
+        @endif
     </div>
 </section>
 
