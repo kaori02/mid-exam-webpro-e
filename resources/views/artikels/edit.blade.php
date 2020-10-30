@@ -1,4 +1,6 @@
-@extends('layouts.app')
+
+  <title>SISCO | artikel Kesehatan</title>
+@extends('layouts.appAdmin')
 @section('content')
     <h1>Edit Artikel</h1>
     {!! Form::open(['action' => ['ArtikelController@update', $artikel->id_artikel], 'method' =>'POST', 'enctype' => 'multipart/form-data']) !!}

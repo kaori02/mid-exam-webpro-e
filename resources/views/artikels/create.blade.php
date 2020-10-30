@@ -1,4 +1,6 @@
-@extends('layouts.app')
+
+  <title>SISCO | Artikels</title>
+@extends('layouts.appAdmin')
 @section('content')
     <h1>Buat Artikel</h1>
     {!! Form::open(['action' => 'ArtikelController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
