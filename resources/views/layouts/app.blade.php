@@ -6,6 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+      <link rel="shortcut icon" href="assets/images/sisco-128x128-1.png" type="image/x-icon">
 
     <title>{{config('SISCO')}}</title>
 
