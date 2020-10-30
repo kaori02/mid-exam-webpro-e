@@ -17,7 +17,10 @@ class CreatePoskoKesehatansTable extends Migration
             $table->id("id_posko");
             $table->string('nama_posko',50);
             $table->string('alamat_kesehatan',200);
-            $table->string('no_telp_kesehatan',14);
+            $table->string('no_telp_kesehatan',14);            
+            $table->float('lat')->nullable();
+            $table->float('lng')->nullable();
+            $table->string('cover_image')->nullable();
         });
     }
 

@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
    public function index(){
        $artikels = Artikel::latest()->take(3)->get();
-       return view('pages.index')->with('artikel',$artikels);
+       return view('pages.index')->with('artikels',$artikels);
    }
 
    public function contact(){

@@ -28,4 +28,14 @@ class HomeController extends Controller
         $user = User::find($user_id);
         return view('admin')->with('artikels', $user->artikels);
     }
+    
+    public function gmaps()
+
+    {
+
+    	$locations = DB::table('locations')->get();
+
+    	return view('gmaps',compact('locations'));
+
+    }
 }

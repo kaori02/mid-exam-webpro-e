@@ -1,6 +1,6 @@
 
-<title>SISCO | Admin Page</title>@extends('layouts.appAdmin')
-{{-- @extends('layouts.app') --}}
+<title>SISCO | Admin Page</title>
+@extends('layouts.appAdmin')
 
 @section('content')
 <div class="container">

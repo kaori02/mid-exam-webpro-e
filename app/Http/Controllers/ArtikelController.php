@@ -24,7 +24,7 @@ class ArtikelController extends Controller
         //$artikels = Artikel::all();
         //$artikels = select('SELECT * FROM artikels');
         //$artikels = Artikel::orderBy('added_on','desc')->take(3)->get();
-        $artikels = Artikel::orderBy('created_at','desc')->paginate(3);
+        $artikels = Artikel::orderBy('created_at','desc')->paginate(10);
         return view('artikels.index')->with('artikels', $artikels);
     }
 

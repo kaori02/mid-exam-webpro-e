@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/','PagesController@index');
 Route::get('/admin', 'HomeController@index');
 Route::get('/contact','PagesController@contact');
+Route::get('/posko', 'PoskoKesehatanController@index');
 
 Route::resource('ambulans', 'AmbulanController');
 Route::resource('artikels', 'ArtikelController');

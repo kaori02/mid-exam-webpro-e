@@ -39,7 +39,8 @@ class AmbulanController extends Controller
      */
     public function create()
     {
-        //
+        $poskos = Posko_Kesehatan::pluck('nama_posko','id_posko');
+        return view('ambulans/create')->with('poskos', $poskos);;//
     }
 
     /**
@@ -50,7 +51,17 @@ class AmbulanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'id_posko' => 'required',
+            'NoPol' => 'required'
+        ]);
+        //create ambulan
+        $ambulan = new Ambulan;
+        $ambulan->id_posko = $request->input('id_posko');
+        $ambulan->NoPol = $request->input('NoPol');
+        $ambulan->save();
+
+        return redirect('/ambulans')->with('Success',"Ambulan Ditambah");
     }
 
     /**
@@ -74,7 +85,9 @@ class AmbulanController extends Controller
     public function edit($id)
     {
         $ambulan = Ambulan::find($id);
-        return view('ambulans/edit')->with('ambulan',$ambulan);
+        $poskos = Posko_Kesehatan::pluck('nama_posko','id_posko');
+        return view('ambulans.edit', compact('ambulan','poskos'));
+        // return view('ambulans/edit')->with('ambulan',$ambulan);
     }
 
     /**

@@ -1,17 +1,18 @@
-@extends('layouts.appAdmin')
 
-<h1>Buat Artikel</h1>
-{!! Form::open(['action' => 'AmbulanController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-    <div class="form-group">
-        {{Form::label('title_artikel', 'Judul')}}
-        {{Form::text('title_artikel', '', ['class' => 'form-control', 'placeholder' => 'Judul'])}}
-    </div>
-    <div class="form-group">
-        {{Form::label('body_artikel', 'Isi Artikel')}}
-        {{Form::textarea('body_artikel', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Isi Artikel'])}}
-    </div>
-    <div class="form-group">
-        {{Form::file('cover_image')}}
-    </div>
-    {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
-{!! Form::close() !!}
+  <title>SISCO | Ambulans</title>
+  @extends('layouts.appAdmin')
+  @section('content')
+      <h1>Input Ambulan</h1>
+      {!! Form::open(['action' => 'AmbulanController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+          <div class="form-group">
+              {{Form::label('id_posko', 'Nama Posko')}}
+              {{Form::select('id_posko',$poskos)}}
+          </div>
+          <div class="form-group">
+              {{Form::label('NoPol', 'Nomor Polisi')}}
+              {{Form::textarea('NoPol', '', ['class' => 'form-control', 'placeholder' => 'Nomor Polisi'])}}
+          </div>
+          {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+      {!! Form::close() !!}
+  @endsection
+  

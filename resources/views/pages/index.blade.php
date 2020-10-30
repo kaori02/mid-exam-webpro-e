@@ -92,21 +92,18 @@
         <h3 class="mbr-section-subtitle display-5 align-center mbr-fonts-style mbr-light">
             Dapatkan informasi terkini mengenai pandemi serta tips kesehatan lainnya</h3>
         <div class="media-container-row pt-5 ">
-            @foreach ($artikel as $item)
+            @foreach ($artikels as $artikel)
                 <div class="card p-3 col-12 col-md-6 col-lg-4">
                     <div class="card-wrapper ">
                         <div class="card-img">
                             <div class="mbr-overlay"></div>
-                        <div class="mbr-section-btn text-center"><a href="{{url('artikels')}}" class="btn btn-black display-4">Learn More</a></div>
-                        <img src="/storage/cover_images/{{$item->cover_image}}" alt="Mobirise">
+                        <div class="mbr-section-btn text-center"><a href="/artikels/{{$artikel->id_artikel}}" class="btn btn-black display-4">Selengkapnya</a></div>
+                        <img src="/storage/cover_images/{{$artikel->cover_image}}" alt="Mobirise">
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">
-                                {{$item->title_artikel}}
+                                {{$artikel->title_artikel}}
                             </h4>
-                            <p class="mbr-text mbr-fonts-style align-left display-7">
-                                {{$item->body_artikel}}
-                            </p>
                         </div>
                     </div>
                 </div>

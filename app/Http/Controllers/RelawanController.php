@@ -3,19 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Relawan;
+use DB;
 
-use App\Posko_Kesehatan;
-class PoskoKesehatanController extends Controller
+class RelawanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth',['except' => ['create']]);
+    }
+
     public function index()
     {
-        $posko = Posko_Kesehatan::all();
-        return view('posko_kesehatan.index')->with('poskos',$posko);
+        $relawans = Relawan::all();
+        
+
     }
 
     /**
