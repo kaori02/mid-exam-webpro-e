@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
            {{Form::label('NoPol','Nomor Polisi')}}
-           {{ Form::textarea('NoPol',$ambulan->NoPol,['class' => 'form-control', 'placeholder' => 'Nomor Polisi'])}}
+           {{Form::textarea('NoPol',$ambulan->NoPol,['class' => 'form-control', 'placeholder' => 'Nomor Polisi'])}}
         </div>
         {{Form::hidden('_method','PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
