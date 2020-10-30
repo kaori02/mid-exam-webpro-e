@@ -15,7 +15,6 @@ class CreateAmbulansTable extends Migration
     {
         Schema::create('ambulans', function (Blueprint $table) {
             $table->id('id_ambulan');
-            // $table->timestamp('added_on')
             $table->unsignedBigInteger('id_posko');
             $table->foreign('id_posko')->references('id_posko')->on('posko__kesehatans');
             $table->string('NoPol',10);

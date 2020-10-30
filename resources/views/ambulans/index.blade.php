@@ -35,6 +35,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg">
+                @include('inc.messages')
                 @if (empty($ambulan))
                 {{-- kalo ambulance empty --}}
                 <div class="text-wrapper">

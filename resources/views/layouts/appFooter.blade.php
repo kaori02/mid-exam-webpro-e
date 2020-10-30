@@ -96,29 +96,30 @@
             </div>
         </div>
     </section>
-    <script src="assets/web/assets/jquery/jquery.min.js"></script>
-    <script src="assets/popper/popper.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('assets/web/assets/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/popper/popper.min.js')}}"></script>
+    <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
     <script src="https://apis.google.com/js/plusone.js"></script>
-    <script src="assets/facebook-plugin/facebook-script.js"></script>
-    <script src="assets/tether/tether.min.js"></script>
-    <script src="assets/smoothscroll/smooth-scroll.js"></script>
-    <script src="assets/dropdown/js/nav-dropdown.js"></script>
-    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-    <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-    <script src="assets/parallax/jarallax.min.js"></script>
-    <script src="assets/mbr-popup-btns/mbr-popup-btns.js"></script>
-    <script src="assets/playervimeo/vimeo_player.js"></script>
-    <script src="assets/theme/js/script.js"></script>
-    <script src="assets/formstyler/jquery.formstyler.js"></script>
-    <script src="assets/formstyler/jquery.formstyler.min.js"></script>
-    <script src="assets/datepicker/jquery.datetimepicker.full.js"></script>
-    <script src="assets/formoid/formoid.min.js"></script>
-  
-  
+    <script src="{{asset('assets/facebook-plugin/facebook-script.js')}}"></script>
+    <script src="{{asset('assets/tether/tether.min.js')}}"></script>
+    <script src="{{asset('assets/smoothscroll/smooth-scroll.js')}}"></script>
+    <script src="{{asset('assets/dropdown/js/nav-dropdown.js')}}"></script>
+    <script src="{{asset('assets/dropdown/js/navbar-dropdown.js')}}"></script>
+    <script src="{{asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script>
+    <script src="{{asset('assets/viewportchecker/jquery.viewportchecker.js')}}"></script>
+    <script src="{{asset('assets/parallax/jarallax.min.js')}}"></script>
+    <script src="{{asset('assets/mbr-popup-btns/mbr-popup-btns.js')}}"></script>
+    <script src="{{asset('assets/playervimeo/vimeo_player.js')}}"></script>
+    <script src="{{asset('assets/theme/js/script.js')}}"></script>
+    <script src="{{asset('assets/formstyler/jquery.formstyler.js')}}"></script>
+    <script src="{{asset('assets/formstyler/jquery.formstyler.min.js')}}"></script>
+    <script src="{{asset('assets/datepicker/jquery.datetimepicker.full.js')}}"></script>
+    <script src="{{asset('assets/formoid/formoid.min.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
-    <input name="animation" type="hidden">  
+    <input name="animation" type="hidden">
 </body>
 </html>

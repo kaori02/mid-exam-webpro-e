@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Relawan;
-use DB;
+use Illuminate\Support\Facades\Auth;
 
 class RelawanController extends Controller
 {
@@ -17,14 +17,13 @@ class RelawanController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth',['except' => ['create']]);
+        $this->middleware('auth',['except' => ['create','store']]);
     }
 
     public function index()
     {
-        $relawans = Relawan::all();
-        
-
+        $relawans = Relawan::orderBy('created_at','desc')->paginate(10);
+        return view('relawans.index')->with('relawans', $relawans);
     }
 
     /**
@@ -34,7 +33,7 @@ class RelawanController extends Controller
      */
     public function create()
     {
-        //
+        return view('relawans.create');
     }
 
     /**
@@ -45,7 +44,52 @@ class RelawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required',
+            'NIK' => 'required',
+            'TTL' => 'required',
+            'jenis_kelamin' => 'required',
+            'no_telp' => 'required',
+            'email' => 'required',
+            'photo' => 'image|nullable|max:1999',
+        ]);
+
+        //Handle file upload
+        if($request->hasFile('photo'))
+        {
+            //Get filename with the extension
+            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            //Get just extension
+            $extension = $request->file('photo')->getClientOriginalExtension();
+
+            //Filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            //Upload Image
+            $path = $request->file('photo')->storeAs('public/photos', $fileNameToStore);
+        }
+        else
+        {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+        //create adrtikel
+        $relawan = new Relawan;
+        $relawan->nama = $request->input('nama');
+        $relawan->NIK = $request->input('NIK');
+        $relawan->TTL = $request->input('TTL');
+        $relawan->jenis_kelamin = $request->input('jenis_kelamin');
+        $relawan->no_telp = $request->input('no_telp');
+        $relawan->email = $request->input('email');
+        $relawan->status_relawan = "Terdaftar";
+        $relawan->photo = $fileNameToStore;
+        $relawan->save();
+
+        return redirect('/relawans/create')->with('Success',"Pendaftaran Berhasil");
     }
 
     /**
@@ -56,7 +100,8 @@ class RelawanController extends Controller
      */
     public function show($id)
     {
-        //
+        $relawan = Relawan::find($id);
+        return view('relawans/show')->with('relawan',$relawan);
     }
 
     /**
@@ -67,7 +112,14 @@ class RelawanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $relawan = Relawan::find($id);
+
+        //cek user
+        if (Auth::guest())
+        {
+            return redirect('/relawans/create')->with('error','Unauthorized Page');
+        }
+        return view('relawans/edit')->with('relawan',$relawan);
     }
 
     /**
@@ -79,7 +131,10 @@ class RelawanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $relawan = Relawan::find($id);
+        $relawan->status_relawan = "Diterima";
+        $relawan->save();
+        return redirect('/relawans/')->with('Success',"Pendaftaran Terverifikasi");
     }
 
     /**
@@ -90,6 +145,10 @@ class RelawanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $relawan = Relawan::find($id);
+
+        $relawan->status_relawan = "Ditolak";
+        $relawan->save();
+        return redirect('/relawans')->with('Success',"Pendaftaran Ditolak");
     }
 }

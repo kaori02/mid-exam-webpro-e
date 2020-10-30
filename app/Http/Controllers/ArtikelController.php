@@ -49,7 +49,7 @@ class ArtikelController extends Controller
         $this->validate($request,[
             'title_artikel' => 'required',
             'body_artikel' => 'required',
-            'cover_image' => 'image|nullable|max:1999',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
 
         //Handle file upload
@@ -83,7 +83,7 @@ class ArtikelController extends Controller
         $artikel->user_id = auth()->user()->id;
         $artikel->save();
 
-        return redirect('/artikels')->with('Success',"Artikel Ditambah");
+        return redirect('/admin')->with('Success',"Artikel Ditambah");
     }
 
     /**
@@ -111,7 +111,7 @@ class ArtikelController extends Controller
         //cek user
         if (auth()->user()->id !== $artikel->user_id)
         {
-            return redirect('/artikels')->with('error','Unauthorized Page');
+            return redirect('/artikels')->with('Error','Unauthorized Page');
         }
         return view('artikels/edit')->with('artikel',$artikel);
     }
@@ -157,7 +157,7 @@ class ArtikelController extends Controller
         }
         $artikel->save();
 
-        return redirect('/artikels')->with('Success',"Artikel Diperbarui");
+        return redirect('/admin')->with('Success',"Artikel Diperbarui");
     }
 
     /**
@@ -173,7 +173,7 @@ class ArtikelController extends Controller
         //cek user
         if (auth()->user()->id !== $artikel->user_id)
         {
-            return redirect('/artikels')->with('error','Unauthorized Page');
+            return redirect('/admin')->with('Error','Unauthorized Page');
         }
 
         if($artikel->cover_image != 'noimage.jpg')
@@ -184,6 +184,6 @@ class ArtikelController extends Controller
 
 
         $artikel->delete();
-        return redirect('/artikels')->with('Success',"Artikel Terhapus");
+        return redirect('/admin')->with('Success',"Artikel Terhapus");
     }
 }

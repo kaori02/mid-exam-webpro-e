@@ -69,11 +69,21 @@
 
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Posko Kesehatan<span class="caret"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/poskos">Daftar Posko Kesehatan</a>
+                    <a class="dropdown-item" href="/poskos/create">Tambahkan Posko</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     Relawan<span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/relawans/create">Pendaftaran Relawan</a>
-                    <a class="dropdown-item" href="/relawans">Daftar Relawan Artikel</a>
+                    <a class="dropdown-item" href="/relawans/">Daftar Relawan</a>
                 </div>
             </li>
           </ul>
@@ -125,4 +135,5 @@
         CKEDITOR.replace( 'article-ckeditor' );
     </script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Artikel;
 use App\User;
+use App\Ambulan;
+use App\Posko_Kesehatan;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,9 +28,14 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('admin')->with('artikels', $user->artikels);
+        $artikels = $user->artikels;
+        $ambulans = Ambulan::join('posko__kesehatans', 'posko__kesehatans.id_posko', '=', 'ambulans.id_posko')
+        ->select('*')->orderBy('NoPol', 'asc')
+        ->get();
+        $poskos = Posko_Kesehatan::orderBy('nama_posko', 'asc')->get();
+        return view('admin', compact('artikels','ambulans', 'poskos'));
     }
-    
+
     public function gmaps()
 
     {

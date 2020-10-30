@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePoskoKesehatansTable extends Migration
+class AddUserIdToPoskoKesehatan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreatePoskoKesehatansTable extends Migration
      */
     public function up()
     {
-        Schema::create('posko__kesehatans', function (Blueprint $table) {
-            $table->id("id_posko");
-            $table->string('nama_posko');
-            $table->string('alamat_posko');
-            $table->string('no_telp_posko',14);
+        Schema::table('posko_kesehatan', function (Blueprint $table) {
+            $table->string('cover_image')->nullable();
         });
     }
 
@@ -28,6 +25,9 @@ class CreatePoskoKesehatansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posko__kesehatans');
+        Schema::table('posko_kesehatan', function (Blueprint $table) {
+            $table->string('cover_image')->nullable();
+            $table->dropColumn('user_id');
+        });
     }
 }

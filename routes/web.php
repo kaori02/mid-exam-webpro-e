@@ -22,10 +22,12 @@ Auth::routes();
 //Kode kita mulai dari sini
 Route::get('/','PagesController@index');
 Route::get('/admin', 'HomeController@index');
+Route::get('/ambulans/admin', 'AmbulanController@admin');
+Route::get('/poskos/admin', 'PoskoKesehatanController@admin');
 Route::get('/contact','PagesController@contact');
-Route::get('/posko', 'PoskoKesehatanController@index');
 
 Route::resource('ambulans', 'AmbulanController');
 Route::resource('artikels', 'ArtikelController');
 Route::resource('laporans', 'LaporanController');
-Route::resource('posko_kesehatans', 'PoskoKesehatanController');
+Route::resource('relawans', 'RelawanController');
+Route::resource('poskos', 'PoskoKesehatanController');

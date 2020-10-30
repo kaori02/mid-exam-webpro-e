@@ -50,8 +50,8 @@
                         <a class="nav-link link text-white display-4" href="/ambulans">Hubungi Ambulance</a>
                     </li>
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="/artikels">Artikel Kesehatan</a></li><li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="posko.html">Data Posko</a>
-                    </li><li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="daftar.html">
+                        <a class="nav-link link text-white display-4" href="/poskos">Data Posko</a>
+                    </li><li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="/relawans/create">
                             Pendaftaran Relawan</a></li></ul>
 
             </div>

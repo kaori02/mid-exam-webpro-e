@@ -37,7 +37,7 @@
 
             <div class="row align-items-center">
                 <div class="col-md-4 col-sm-4">
-                    <img src="/storage/cover_images/{{$artikel->cover_image}}" width=100%>
+                    <img src="/storage/cover_images/{{$artikel->cover_image}}" width=100% style="padding-top:15px;padding-bottom:15px;">
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">

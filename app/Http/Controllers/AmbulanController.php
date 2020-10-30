@@ -8,6 +8,10 @@ use App\Posko_Kesehatan;
 
 class AmbulanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except' => ['index']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,11 +29,6 @@ class AmbulanController extends Controller
             $posko = Posko_Kesehatan::find($ambulan->id_posko);
         }
         return view('ambulans.index', compact('ambulan','posko'));
-    }
-
-    public function admin()
-    {
-        return view('ambulans.admin');
     }
 
     /**
@@ -61,7 +60,7 @@ class AmbulanController extends Controller
         $ambulan->NoPol = $request->input('NoPol');
         $ambulan->save();
 
-        return redirect('/ambulans')->with('Success',"Ambulan Ditambah");
+        return redirect('ambulans/admin')->with('Success',"Ambulan Ditambah");
     }
 
     /**
@@ -100,16 +99,18 @@ class AmbulanController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'id_posko' => 'required'
+            'id_posko' => 'required',
+            'NoPol' => 'required'
         ]);
 
 
         //create artikel
         $ambulan = Ambulan::find($id);
         $ambulan->id_posko = $request->input('id_posko');
+        $ambulan->NoPol = $request->input('NoPol');
         $ambulan->save();
 
-        return redirect('/ambulans/admin')->with('Success',"Ambulan Diperbarui");
+        return redirect('ambulans/admin')->with('Success',"Ambulan Diperbarui");
     }
 
     /**
@@ -120,6 +121,16 @@ class AmbulanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Ambulan = Ambulan::find($id);
+        $Ambulan->delete();
+        return redirect('ambulans/admin')->with('Success',"Ambulan Terhapus");
+    }
+
+    public function admin()
+    {
+        $ambulans = Ambulan::join('posko__kesehatans', 'posko__kesehatans.id_posko', '=', 'ambulans.id_posko')
+        ->select('*')->orderBy('NoPol', 'asc')
+        ->get();
+        return view('ambulans/admin', compact('ambulans'));
     }
 }

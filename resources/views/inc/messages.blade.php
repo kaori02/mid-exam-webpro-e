@@ -14,6 +14,6 @@
 
 @if (session('Error'))
     <div class="alert alert-danger" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
-        {{session('error')}}
+        {{session('Error')}}
     </div>
 @endif
