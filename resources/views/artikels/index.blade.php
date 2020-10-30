@@ -91,17 +91,15 @@
             @foreach ($artikels as $artikel)
 
             <div class="row align-items-center">
-                <div class="col-12 col-lg-6 video-block">
-                    <div class="video-wrapper"><img src="/storage/cover_images/{{$artikel->cover_image}}" alt=""></div>
+                <div class="col-md-4 col-sm-4">
+                    <img src="/storage/cover_images/{{$artikel->cover_image}}" width=100%>
                 </div>
-                <div class="col-12 col-lg">
-                    <div class="mbr-section-text">
-                        <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">
-                        <strong><a href="/artikels/{{$artikel->id_artikel}}">{{$artikel->title_artikel}}</a></strong></h5>
-                        <small style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
-                            Ditulis pada {{$artikel->created_at}} oleh {{$artikel->user->name}}
-                        </small>
-                    </div>
+                <div class="col-md-8 col-sm-8">
+                    <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">
+                    <strong><a href="/artikels/{{$artikel->id_artikel}}">{{$artikel->title_artikel}}</a></strong></h5>
+                    <small style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        Ditulis pada {{$artikel->created_at}} oleh {{$artikel->user->name}}
+                    </small>
                 </div>
             </div>
             @endforeach

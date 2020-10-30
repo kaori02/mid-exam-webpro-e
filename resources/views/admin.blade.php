@@ -22,7 +22,7 @@
 
             <div class="media-container-row pt-5 pb-5">
                 <h3>Artikel Anda</h3>
-                <a href="/news/create" class="btn btn-primary btn-block" style="float-right">Tambah Artikel</a>
+                <a href="/artikels/create" class="btn btn-primary btn-block" style="float-right">Tambah Artikel</a>
             </div>
 
             @if(count($artikels) > 0)

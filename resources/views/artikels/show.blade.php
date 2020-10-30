@@ -90,15 +90,10 @@
             <h4 class="mbr-section-title mbr-fonts-style mb-0 display-2">
                 <strong>{{$artikel->title_artikel}}</strong></h4><br>
 
-                {{-- <h5 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-7">Click on the video in this block to set the link to
-                    your own video.</h5> --}}
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-7">Ditulis pada {{$artikel->created_at}} oleh {{$artikel->user->name}}</h5>
         </div>
         <div class="row justify-content-center mt-4">
-            <div class="col-12 col-md-10 video-block">
-                <div class="video-wrapper"><img src="/storage/cover_images/{{$artikel->cover_image}}" width="1280" height="720" frameborder="0"></div>
-                {{-- <p class="mbr-text pt-2 mbr-fonts-style display-4">
-                    Video Description</p> --}}
-            </div>
+            <img src="/storage/cover_images/{{$artikel->cover_image}}" width=80%>
         </div>
     </div>
 </section>
@@ -107,19 +102,20 @@
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-8">
-                <small>Ditulis pada {{$artikel->created_at}}</small> <br><br>
+                {{-- <small>Ditulis pada {{$artikel->created_at}} oleh {{$artikel->user->name}}</small> <br><br> --}}
                 <p>
                     {{$artikel->body_artikel}}
                 </p>
             </div>
         </div>
         @if(!Auth::guest())
-            <br><br><br><br>
-            <a href="/artikels/{{$artikel->id_artikel}}/edit" class="btn btn-primary display-4">EDIT</a>
-            {!!Form::open(['action' => ['ArtikelController@destroy', $artikel->id_artikel], 'method' => 'POST', 'class' => 'float-right'])!!}
+            @if (Auth::user()->id == $artikel->user_id)
+                <a href="/artikels/{{$artikel->id_artikel}}/edit" class="btn btn-primary display-4">EDIT</a>
+                {!!Form::open(['action' => ['ArtikelController@destroy', $artikel->id_artikel], 'method' => 'POST', 'class' => 'float-right'])!!}
                     {{Form::hidden('_method', 'DELETE')}}
                     {{Form::submit('Delete', ['class' => 'btn btn-secondary display-4'])}}
-            {!!Form::close() !!}
+                {!!Form::close() !!}
+            @endif
         @endif
     </div>
 </section>

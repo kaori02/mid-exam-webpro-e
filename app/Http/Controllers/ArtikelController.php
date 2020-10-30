@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Artikel;
 
 class ArtikelController extends Controller
@@ -106,6 +107,12 @@ class ArtikelController extends Controller
     public function edit($id)
     {
         $artikel = Artikel::find($id);
+
+        //cek user
+        if (auth()->user()->id !== $artikel->user_id)
+        {
+            return redirect('/artikels')->with('error','Unauthorized Page');
+        }
         return view('artikels/edit')->with('artikel',$artikel);
     }
 
@@ -163,10 +170,16 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::find($id);
 
+        //cek user
+        if (auth()->user()->id !== $artikel->user_id)
+        {
+            return redirect('/artikels')->with('error','Unauthorized Page');
+        }
+
         if($artikel->cover_image != 'noimage.jpg')
         {
             //delete image
-            Storage::delete('public/cover_images/'.$post->cover_image);
+            Storage::delete('public/cover_images/'.$artikel->cover_image);
         }
 
 

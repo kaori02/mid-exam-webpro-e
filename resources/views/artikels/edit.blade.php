@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
     <h1>Edit Artikel</h1>
-
     {!! Form::open(['action' => ['ArtikelController@update', $artikel->id_artikel], 'method' =>'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{Form::label('title_artikel', 'Judul')}}
