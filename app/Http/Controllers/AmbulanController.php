@@ -15,9 +15,15 @@ class AmbulanController extends Controller
      */
     public function index()
     {
-        $ambulan = Ambulan::all()->random();
-        $posko = Posko_Kesehatan::find($ambulan->id_posko);
+        $ambulanData = Ambulan::all();
+        $ambulan = [];
+        $posko = [];
 
+        if (count($ambulanData) > 0)
+        {
+            $ambulan = $ambulanData->random();
+            $posko = Posko_Kesehatan::find($ambulan->id_posko);
+        }
         return view('ambulans.index', compact('ambulan','posko'));
     }
 
@@ -83,7 +89,7 @@ class AmbulanController extends Controller
         $this->validate($request,[
             'id_posko' => 'required'
         ]);
-        
+
 
         //create artikel
         $ambulan = Ambulan::find($id);
