@@ -115,6 +115,11 @@
             </div>
         </div>
         @endif
+        <div class="container">
+            @if(!Auth::guest())
+                <h3><a class="btn btn-primary" href="/artikels/create">Tulis Artikel baru!</a></h3>
+            @endif
+        </div>
     </div>
 </section>
 
