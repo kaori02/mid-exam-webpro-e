@@ -40,7 +40,7 @@
 
                         <div class="card-text">
                             <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
-                                  100
+                                  {{$ambulan}}
                             </h3>
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Ambulance</h4>
 
@@ -56,7 +56,7 @@
                         </div>
                         <div class="card-text">
                             <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
-                                  200
+                                {{$relawan}}
                             </h3>
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
                                 Relawan</h4>
@@ -71,7 +71,7 @@
                             <span class="mbr-iconfont mbrib-home"></span>
                         </div>
                         <div class="card-text">
-                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">30</h3>
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">{{$posko}}</h3>
                             <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Posko Kesehatan</h4>
 
                         </div>

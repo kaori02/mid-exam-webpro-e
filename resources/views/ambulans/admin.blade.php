@@ -22,6 +22,10 @@
             <div class="media-container-row pt-5 pb-5">
                 <h3>Ambulan Kita</h3>
                 <a href="/ambulans/create" class="btn btn-primary btn-block" style="float-right">Tambah Ambulan</a>
+                <form action="/ambulans/search" style="padding-top:20px" method="GET">
+                    <input type="text" name="search" placeholder="Cari Ambulans .." value="{{ old('search') }}">
+                    <input type="submit" value="Cari" class="btn-primary">
+                </form>
             </div>
 
             @if(count($ambulans) > 0)
@@ -46,6 +50,7 @@
                     </tr>
                 @endforeach
             </table>
+            {{ $ambulans->links() }}
 
         @else
         <table class="table table-striped">

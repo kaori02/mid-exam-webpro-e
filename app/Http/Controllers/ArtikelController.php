@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Artikel;
+use App\User;
 
 class ArtikelController extends Controller
 {
@@ -83,7 +84,7 @@ class ArtikelController extends Controller
         $artikel->user_id = auth()->user()->id;
         $artikel->save();
 
-        return redirect('/admin')->with('Success',"Artikel Ditambah");
+        return redirect('artikels/admin')->with('Success',"Artikel Ditambah");
     }
 
     /**
@@ -157,7 +158,7 @@ class ArtikelController extends Controller
         }
         $artikel->save();
 
-        return redirect('/admin')->with('Success',"Artikel Diperbarui");
+        return redirect('artikels/admin')->with('Success',"Artikel Diperbarui");
     }
 
     /**
@@ -173,7 +174,7 @@ class ArtikelController extends Controller
         //cek user
         if (auth()->user()->id !== $artikel->user_id)
         {
-            return redirect('/admin')->with('Error','Unauthorized Page');
+            return redirect('artikels/admin')->with('Error','Unauthorized Page');
         }
 
         if($artikel->cover_image != 'noimage.jpg')
@@ -184,6 +185,15 @@ class ArtikelController extends Controller
 
 
         $artikel->delete();
-        return redirect('/admin')->with('Success',"Artikel Terhapus");
+        return redirect('artikels/admin')->with('Success',"Artikel Terhapus");
+    }
+
+    public function admin()
+    {
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $artikels = $user->artikels;
+        return $artikels;
+        return view('artikels/admin', compact('artikels'));
     }
 }

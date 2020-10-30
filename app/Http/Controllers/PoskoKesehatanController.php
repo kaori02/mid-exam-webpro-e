@@ -162,13 +162,13 @@ class PoskoKesehatanController extends Controller
     public function destroy($id)
     {
         $posko = Posko_Kesehatan::find($id);
-        $id2 = $posko->id_posko;
-        $ambulan = Ambulan::find($id);
+        $ambulans = Ambulan::join('posko__kesehatans', 'posko__kesehatans.id_posko', '=', 'ambulans.id_posko')
+        ->select('*')->orderBy('NoPol', 'asc')
+        ->get();
 
-        return $ambulan;
 
-        if (empty($ambulan)) {
-            return redirect('poskos/admin')->with('Error','Masih ada ambulan yang terhubung');
+        if (count($ambulans) > 0) {
+            return redirect('ambulans/admin')->with('Error','Masih ada ambulan yang terhubung');
         }
 
         if ($posko->cover_image != 'noimage.jpg') {
@@ -183,7 +183,7 @@ class PoskoKesehatanController extends Controller
 
     public function admin()
     {
-        $poskos = Posko_Kesehatan::orderBy('nama_posko', 'asc')->get();
+        $poskos = Posko_Kesehatan::orderBy('nama_posko', 'asc')->paginate(7);
         return view('poskos/admin', compact('poskos'));
     }
     // public funtion search(){

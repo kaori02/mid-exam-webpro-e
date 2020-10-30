@@ -28,11 +28,11 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        $artikels = $user->artikels;
+        $artikels = $user->artikels->take(2);
         $ambulans = Ambulan::join('posko__kesehatans', 'posko__kesehatans.id_posko', '=', 'ambulans.id_posko')
         ->select('*')->orderBy('NoPol', 'asc')
-        ->get();
-        $poskos = Posko_Kesehatan::orderBy('nama_posko', 'asc')->get();
+        ->take(2)->get();
+        $poskos = Posko_Kesehatan::orderBy('nama_posko', 'asc')->take(2)->get();
         return view('admin', compact('artikels','ambulans', 'poskos'));
     }
 

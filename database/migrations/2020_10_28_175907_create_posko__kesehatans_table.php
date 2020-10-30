@@ -16,8 +16,8 @@ class CreatePoskoKesehatansTable extends Migration
         Schema::create('posko__kesehatans', function (Blueprint $table) {
             $table->id("id_posko");
             $table->string('nama_posko');
-            $table->string('alamat_posko');
-            $table->string('no_telp_posko',14);
+            $table->string('alamat_kesehatan');
+            $table->string('no_telp_kesehatan',14);
         });
     }
 

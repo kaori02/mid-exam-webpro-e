@@ -30,6 +30,7 @@
                 </tr>
             @endforeach
         </table>
+        {{ $ambulans->links() }}
 
     @else
     <table class="table table-striped">

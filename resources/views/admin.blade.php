@@ -23,6 +23,7 @@
             <div class="media-container-row pt-5 pb-5">
                 <h3>Artikel Anda</h3>
                 <a href="/artikels/create" class="btn btn-primary btn-block" style="float-right">Tambah Artikel</a>
+                <a href="/artikels/admin" class="btn btn-primary btn-block" style="float-right">Lihat Selengkapnya</a>
             </div>
 
             @if(count($artikels) > 0)
@@ -56,6 +57,7 @@
             <div class="media-container-row pt-5 pb-5">
                 <h3>Ambulan Kita</h3>
                 <a href="/ambulans/create" class="btn btn-primary btn-block" style="float-right">Tambah Ambulan</a>
+                <a href="/ambulans/admin" class="btn btn-primary btn-block" style="float-right">Lihat Selengkapnya</a>
             </div>
 
             @if(count($ambulans) > 0)
@@ -91,6 +93,7 @@
         <div class="media-container-row pt-5 pb-5">
             <h3>Posko Kita</h3>
             <a href="/poskos/create" class="btn btn-primary btn-block" style="float-right">Tambah Posko</a>
+            <a href="/poskos/admin" class="btn btn-primary btn-block" style="float-right">Lihat Selengkapnya</a>
         </div>
 
         @if(count($poskos) > 0)

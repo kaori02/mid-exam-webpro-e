@@ -22,7 +22,9 @@ Auth::routes();
 //Kode kita mulai dari sini
 Route::get('/','PagesController@index');
 Route::get('/admin', 'HomeController@index');
+Route::get('/artikels/admin', 'ArtikelController@admin');
 Route::get('/ambulans/admin', 'AmbulanController@admin');
+Route::get('/ambulans/search','AmbulanController@search');
 Route::get('/poskos/admin', 'PoskoKesehatanController@admin');
 Route::get('/contact','PagesController@contact');
 
