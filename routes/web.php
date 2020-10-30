@@ -19,14 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index');
-
 //Kode kita mulai dari sini
 Route::get('/','PagesController@index');
+Route::get('/admin', 'HomeController@index');
 Route::get('/contact','PagesController@contact');
 
 Route::resource('ambulans', 'AmbulanController');
 Route::resource('artikels', 'ArtikelController');
 Route::resource('laporans', 'LaporanController');
 Route::resource('posko_kesehatans', 'PoskoKesehatanController');
-

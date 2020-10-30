@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/sisco-128x128-1.png" type="image/x-icon">
   <meta name="description" content="This is a ambulance page of SISCO">
-  
-  
+
+
   <title>SISCO | Hubungi Ambulance</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -22,16 +22,16 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
-  
+
+
+
+
 </head>
 <body>
-  
+
   <section class="menu cid-seO9Ms8UnK" once="menu" id="menu2-1o">
 
-    
+
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
         </button>
         <div class="menu-logo">
             <div class="navbar-brand">
-                
+
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-5" href="/">
                         SISCO</a></span>
             </div>
@@ -57,14 +57,14 @@
                     <a class="nav-link link text-white display-4" href="posko.html">Data Posko</a>
                 </li><li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="daftar.html">
                         Pendaftaran Relawan</a></li></ul>
-            
+
         </div>
     </nav>
 </section>
 
 <section class="header1 cid-seOjuaaiu2 mbr-parallax-background" id="header1-2g">
 
-    
+
 
     <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
     </div>
@@ -76,8 +76,8 @@
                     Hubungi Ambulance</h1>
                 <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
                     Hubungi ambulance terdekat dari lokasi anda</h3>
-                
-                
+
+
             </div>
         </div>
     </div>
@@ -85,9 +85,9 @@
 </section>
 
 <section class="image1 cid-seOdG1e7F1" id="image1-1x">
-    
 
-    
+
+
 
     <div class="container">
         <div class="row align-items-center">
@@ -99,9 +99,15 @@
                 </div>
             </div>
             <div class="col-12 col-lg">
+                @if (empty($ambulan))
+                {{-- kalo ambulance empty --}}
+                <div class="text-wrapper">
+                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong style="color: red">Ambulance Tidak Ditemukan</strong></h3>
+                </div>
+                @else
                 <div class="text-wrapper">
                     <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Ambulance Ditemukan</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7"></p><p></p>
+                    <p class="mbr-text mbr-fonts-style display-7"></p>
                     <p>
                         Nama Posko : {{$posko->nama_posko}}
                     </p>
@@ -117,8 +123,8 @@
                     <p>
                         Nomor Polisi : {{$ambulan->NoPol}}
                     </p>
-                    <p></p>
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -126,9 +132,9 @@
 
 <section class="cid-seOA8ureTC" id="footer2-2y">
 
-    
 
-    
+
+
 
     <div class="container">
         <div class="media-container-row content mbr-white">
@@ -211,9 +217,9 @@
             </div>
         </div>
     </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/r" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://mobirise.site" style="color:#aaa;">mobirise.com</a> easy website builder</p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>  <script src="https://apis.google.com/js/plusone.js"></script>  <script src="assets/facebook-plugin/facebook-script.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>  <script src="assets/parallax/jarallax.min.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/r" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://mobirise.site" style="color:#aaa;">mobirise.com</a> easy website builder</p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>  <script src="https://apis.google.com/js/plusone.js"></script>  <script src="assets/facebook-plugin/facebook-script.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>  <script src="assets/parallax/jarallax.min.js"></script>  <script src="assets/theme/js/script.js"></script>
+
+
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
   </body>
