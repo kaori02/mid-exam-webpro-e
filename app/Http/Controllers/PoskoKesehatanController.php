@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Posko_Kesehatan;
+use App\Relawan;
 class PoskoKesehatanController extends Controller
 {
     /**
@@ -163,20 +164,24 @@ class PoskoKesehatanController extends Controller
     public function destroy($id)
     {
         $posko = Posko_Kesehatan::find($id);
-        $ambulans = Ambulan::join('posko__kesehatans', 'posko__kesehatans.id_posko', '=', 'ambulans.id_posko')
-        ->select('*')->orderBy('NoPol', 'asc')
-        ->get();
+        $ambulans = Ambulan::select('*')
+        ->where('id_posko','=', $id)->get();
 
+        $relawans = Relawan::select('*')
+        ->where('id_posko','=', $id)->get();
 
         if (count($ambulans) > 0) {
             return redirect('ambulans/admin')->with('Error','Masih ada ambulan yang terhubung');
+        }
+
+        if (count($relawans) > 0) {
+            return redirect('poskos/admin')->with('Error','Masih ada relawan yang terhubung');
         }
 
         if ($posko->cover_image != 'noimage.jpg') {
             //delete image
             Storage::delete('public/cover_images/' . $posko->cover_image);
         }
-
 
         $posko->delete();
         return redirect('poskos/admin')->with('Success', "Posko Terhapus");

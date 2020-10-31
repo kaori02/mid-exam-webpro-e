@@ -25,22 +25,22 @@
         <div class="row align-items-center">
             <div class="col-12 col-lg-7">
                 <div class="image-wrapper">
-                    <img src="{{asset('assets/images/4.jpg')}}" alt="Mobirise">
-                        <p class="mbr-description mbr-fonts-style pt-2 align-center display-5" id="button1" style="cursor:pointer">
-                            CALL AMBULANCE</p>
+                    <a id="button1">
+                        <img src="{{asset('assets/images/call.png')}}" alt="">
+                    </a>
+                        <p class="mbr-description mbr-fonts-style pt-2 align-center display-5">CALL AMBULANCE</p>
                 </div>
             </div>
-            <div class="col-12 col-lg">
+            <div class="col-12 col-lg" id="ampun" style="display:none">
                 @include('inc.messages')
                 @if (empty($ambulan))
                 {{-- kalo ambulance empty --}}
-                <div class="text-wrapper" id="ampun2" style="display:none">
+                <div class="text-wrapper">
                     <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong style="color: red">Ambulance Tidak Ditemukan</strong></h3>
                 </div>
                 @else
-                <div class="text-wrapper" id="ampun" style="display:none">
+                <div class="text-wrapper">
                     <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Ambulance Ditemukan</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7"></p>
                     <p>
                         Nama Posko : {{$posko->nama_posko}}
                     </p>
@@ -49,9 +49,6 @@
                     </p>
                     <p>
                         No. Telepon : {{$posko->no_telp_kesehatan}}
-                    </p>
-                    <p>
-                        Id Ambulance : {{$ambulan->id_ambulan}}
                     </p>
                     <p>
                         Nomor Polisi : {{$ambulan->NoPol}}
@@ -66,10 +63,9 @@
 @section('moreJS')
     <script>
         var btn1 = document.getElementById("button1");
-        var ampun = document.getElementById("ampun")
+        var ampun = document.getElementById("ampun");
         btn1.addEventListener("click", function() {
-            ampun.style.display = "block";
-            ampun2.style.display = "block";
+            ampun.style.display = "block"
         });
     </script>
 @endsection

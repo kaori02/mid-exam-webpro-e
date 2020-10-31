@@ -39,7 +39,7 @@
             <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-8">
                 {{-- <small>Ditulis pada {{$artikel->created_at}} oleh {{$artikel->user->name}}</small> <br><br> --}}
                 <p>
-                    {{$artikel->body_artikel}}
+                    {!!$artikel->body_artikel!!}
                 </p>
             </div>
         </div>

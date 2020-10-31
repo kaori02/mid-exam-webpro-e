@@ -14,7 +14,8 @@ class PagesController extends Controller
        $artikels = Artikel::latest()->take(3)->get();
        $ambulan = Ambulan::count();
        $posko = Posko_Kesehatan::count();
-       $relawan = Relawan::count();
+       $relawan = Relawan::select('nama')
+       ->where('status_relawan', '=', 'Diterima')->count();
     //    return view('pages.index')->with('artikels',$artikels);
        return view('pages.index', compact('artikels','ambulan', 'posko', 'relawan'));
    }
