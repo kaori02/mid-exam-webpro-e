@@ -36,14 +36,4 @@ class HomeController extends Controller
         $poskos = Posko_Kesehatan::orderBy('nama_posko', 'asc')->take(3)->get();
         return view('admin', compact('artikels','ambulans', 'poskos'));
     }
-
-    public function gmaps()
-
-    {
-
-    	$locations = DB::table('locations')->get();
-
-    	return view('gmaps',compact('locations'));
-
-    }
 }

@@ -23,6 +23,7 @@ class AmbulanController extends Controller
         $ambulan = [];
         $posko = [];
 
+
         if (count($ambulanData) > 0)
         {
             $ambulan = $ambulanData->random();
@@ -134,16 +135,4 @@ class AmbulanController extends Controller
         return view('ambulans/admin', compact('ambulans'));
     }
 
-    public function search(Request $request)
-	{
-		$search = $request->search;
-
-		$ambulans = Ambulan::join('posko__kesehatans', 'posko__kesehatans.id_posko', '=', 'ambulans.id_posko')
-        ->select('*')->orderBy('NoPol', 'asc')
-        ->where('NoPol','like',"%".$search."%")
-		->paginate(7);
-
-		return view('ambulans/admin', compact('ambulans'));
-
-	}
 }

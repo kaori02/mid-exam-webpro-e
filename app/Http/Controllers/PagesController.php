@@ -19,8 +19,4 @@ class PagesController extends Controller
        return view('pages.index', compact('artikels','ambulan', 'posko', 'relawan'));
    }
 
-   public function contact(){
-    return view('pages.contact');
-   }
-
 }
