@@ -1,3 +1,4 @@
+<title>SISCO | Login</title>
 @extends('layouts.appAdmin')
 
 @section('content')

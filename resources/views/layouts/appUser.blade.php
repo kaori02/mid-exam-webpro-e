@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
     <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
     <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
+    @yield('moreCSS')
 </head>
 <body>
 

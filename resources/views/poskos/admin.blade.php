@@ -9,14 +9,17 @@
             <h3>Posko Kita</h3>
             <a href="/poskos/create" class="btn btn-primary btn-block" style="float-right">Tambah Posko</a>
         </div>
-
+        <div class="table-responsive">
         @if(count($poskos) > 0)
-        <table class="table table-striped">
+        <table id="tabel-p" class="table table-striped">
+            <thead>
             <tr>
                 <th>Nama Posko</th>
                 <th>UBAH</th>
                 <th>HAPUS</th>
             </tr>
+            </thead>
+            <tbody>
             @foreach ($poskos as $posko)
                 <tr>
                     <th>{{$posko->nama_posko}}</th>
@@ -29,16 +32,25 @@
                     </th>
                 </tr>
             @endforeach
+            </tbody>
         </table>
-        {{ $ambulans->links() }}
 
     @else
     <table class="table table-striped">
         <tr>
             <th>Tidak ada posko</th>
+        </tr>
     </table>
     @endif
-
+        </div>
     </div>
 </div>
+@endsection
+
+@section('moreJS')
+    <script>
+        $(document).ready(function(){
+			$('#tabel-p').DataTable();
+        });
+    </script>
 @endsection

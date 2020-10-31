@@ -193,7 +193,6 @@ class ArtikelController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
         $artikels = $user->artikels;
-        return $artikels;
         return view('artikels/admin', compact('artikels'));
     }
 }

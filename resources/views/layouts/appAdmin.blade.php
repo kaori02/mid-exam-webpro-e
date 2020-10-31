@@ -10,11 +10,12 @@
   <meta name="description" content="This is a ambulance page of SISCO">
 
 
-  <title>SISCO | Hubungi Ambulance</title>
+  <title>SISCO | Admin mode</title>
   <link rel="stylesheet" href="{{asset('assets/web/assets/mobirise-icons/mobirise-icons.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
   <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -44,16 +45,6 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/artikels">Lihat Artikel</a>
                     <a class="dropdown-item" href="/artikels/create">Buat Artikel</a>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    Laporan<span class="caret"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/laporans">Lihat Laporan</a>
-                    <a class="dropdown-item" href="/laporans/create">Buat Laporan</a>
                 </div>
             </li>
 
@@ -107,7 +98,7 @@
                       </a>
 
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                          <a class="dropdown-item" href="/admin">Dashboard</a>
                           <a class="dropdown-item" href="{{ route('logout') }}"
                               onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
@@ -130,10 +121,9 @@
         @yield('content')
     </main>
 </div>
-    <script src="{{asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-    <script>
-        CKEDITOR.replace( 'article-ckeditor' );
-    </script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+@yield('moreJS')
 </body>

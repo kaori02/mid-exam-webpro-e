@@ -25,13 +25,17 @@
   </section>
 
   <section class="video4 cid-seOsQZdSTD" id="video4-2r">
-
-
       <div class="container">
-          <div class="title-wrapper mb-5">
+        <div style="font-family: Arial, Helvetica, sans-serif">
+            <div class="form-group">
+                <form action="/relawans/search"  method="GET">
+                    <input type="text" class="btn mx-auto d-block" name="search" style="width: 50%"  placeholder="Cari Pendaftar Relawan .." value="{{ old('search') }}">
+                    <input type="submit" value="Cari" class="btn btn-primary mx-auto d-block">
+                </form>
+            </div>
+        </div>
 
-          </div>
-          @include('inc.messages')
+        @include('inc.messages')
           @if(count($relawans) > 0)
               @foreach ($relawans as $relawan)
 

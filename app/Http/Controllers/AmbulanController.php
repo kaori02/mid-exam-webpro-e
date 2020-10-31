@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ambulan;
 use App\Posko_Kesehatan;
-use Illuminate\Support\Facades\DB;
 
 class AmbulanController extends Controller
 {
@@ -40,7 +39,7 @@ class AmbulanController extends Controller
     public function create()
     {
         $poskos = Posko_Kesehatan::pluck('nama_posko','id_posko');
-        return view('ambulans/create')->with('poskos', $poskos);;//
+        return view('ambulans/create')->with('poskos', $poskos);
     }
 
     /**
@@ -138,13 +137,13 @@ class AmbulanController extends Controller
     public function search(Request $request)
 	{
 		$search = $request->search;
- 
+
 		$ambulans = Ambulan::join('posko__kesehatans', 'posko__kesehatans.id_posko', '=', 'ambulans.id_posko')
         ->select('*')->orderBy('NoPol', 'asc')
         ->where('NoPol','like',"%".$search."%")
 		->paginate(7);
- 
+
 		return view('ambulans/admin', compact('ambulans'));
- 
+
 	}
 }

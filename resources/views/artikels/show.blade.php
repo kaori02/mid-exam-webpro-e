@@ -28,7 +28,7 @@
                 <h5 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-7">Ditulis pada {{$artikel->created_at}} oleh {{$artikel->user->name}}</h5>
         </div>
         <div class="row justify-content-center mt-4">
-            <img src="/storage/cover_images/{{$artikel->cover_image}}" width=80%>
+            <img src="/storage/cover_images/{{$artikel->cover_image}}" width=40%>
         </div>
     </div>
 </section>

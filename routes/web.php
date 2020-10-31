@@ -24,9 +24,10 @@ Route::get('/','PagesController@index');
 Route::get('/admin', 'HomeController@index');
 Route::get('/artikels/admin', 'ArtikelController@admin');
 Route::get('/ambulans/admin', 'AmbulanController@admin');
-Route::get('/ambulans/search','AmbulanController@search');
+Route::get('/poskos/search','PoskoKesehatanController@search');
 Route::get('/poskos/admin', 'PoskoKesehatanController@admin');
 Route::get('/contact','PagesController@contact');
+Route::get('/relawans/search','RelawanController@search');
 
 Route::resource('ambulans', 'AmbulanController');
 Route::resource('artikels', 'ArtikelController');

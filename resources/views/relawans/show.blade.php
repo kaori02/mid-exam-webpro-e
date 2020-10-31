@@ -28,7 +28,7 @@
                 <h5 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-7">Mendaftar pada {{$relawan->created_at}}</h5>
         </div>
         <div class="row justify-content-center mt-4">
-            <img src="/storage/photos/{{$relawan->photo}}" width=80%>
+            <img src="/storage/photos/{{$relawan->photo}}" width=40% height="40%">
         </div>
     </div>
 </section>
@@ -67,6 +67,10 @@
                 <div class="row">
                     <div class="col-4">Email</div>
                     <div class="col-8">{{$relawan->email}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-4">Posko Pilihan</div>
+                    <div class="col-8">{{$posko->nama_posko}}</div>
                 </div>
                 <div class="row">
                     <div class="col-4">Status</div>

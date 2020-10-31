@@ -15,6 +15,8 @@ class CreateRelawansTable extends Migration
     {
         Schema::create('relawans', function (Blueprint $table) {
             $table->id("id");
+            $table->unsignedBigInteger('id_posko');
+            $table->foreign('id_posko')->references('id_posko')->on('posko__kesehatans');
             $table->string("nama");
             $table->string("NIK");
             $table->string("TTL");

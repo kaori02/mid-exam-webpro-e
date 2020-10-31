@@ -21,7 +21,8 @@ class PoskoKesehatanController extends Controller
     }
     public function index()
     {
-        $poskos = Posko_Kesehatan::all();
+        $poskos = Posko_Kesehatan::orderBy('id_posko','desc')->paginate(5);
+        // $poskos = Posko_Kesehatan::orderBy('id_posko','desc');
         return view('poskos.index')->with('poskos',$poskos);
     }
 
@@ -186,7 +187,17 @@ class PoskoKesehatanController extends Controller
         $poskos = Posko_Kesehatan::orderBy('nama_posko', 'asc')->paginate(7);
         return view('poskos/admin', compact('poskos'));
     }
-    // public funtion search(){
 
-    // }
+    public function search(Request $request)
+	{
+        $search = $request->search;
+
+        $poskos = Posko_Kesehatan::orderBy('id_posko','desc')
+        ->select('*')
+        ->where('nama_posko','like',"%".$search."%")
+        ->paginate(5);
+
+		return view('poskos.index', compact('poskos'));
+
+	}
 }

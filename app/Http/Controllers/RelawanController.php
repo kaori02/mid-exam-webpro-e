@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Relawan;
+use App\Posko_Kesehatan;
 use Illuminate\Support\Facades\Auth;
 
 class RelawanController extends Controller
@@ -33,7 +34,8 @@ class RelawanController extends Controller
      */
     public function create()
     {
-        return view('relawans.create');
+        $poskos = Posko_Kesehatan::pluck('nama_posko','id_posko');
+        return view('relawans.create')->with('poskos', $poskos);
     }
 
     /**
@@ -51,6 +53,7 @@ class RelawanController extends Controller
             'jenis_kelamin' => 'required',
             'no_telp' => 'required',
             'email' => 'required',
+            'id_posko' => 'required',
             'photo' => 'image|nullable|max:1999',
         ]);
 
@@ -86,6 +89,7 @@ class RelawanController extends Controller
         $relawan->no_telp = $request->input('no_telp');
         $relawan->email = $request->input('email');
         $relawan->status_relawan = "Terdaftar";
+        $relawan->id_posko = $request->input('id_posko');
         $relawan->photo = $fileNameToStore;
         $relawan->save();
 
@@ -101,7 +105,8 @@ class RelawanController extends Controller
     public function show($id)
     {
         $relawan = Relawan::find($id);
-        return view('relawans/show')->with('relawan',$relawan);
+        $posko = Posko_Kesehatan::find($relawan->id_posko);
+        return view('relawans/show', compact('relawan','posko'));
     }
 
     /**
@@ -151,4 +156,17 @@ class RelawanController extends Controller
         $relawan->save();
         return redirect('/relawans')->with('Success',"Pendaftaran Ditolak");
     }
+
+    public function search(Request $request)
+	{
+        $search = $request->search;
+
+        $relawans = Relawan::orderBy('created_at','desc')
+        ->select('*')
+        ->where('nama','like',"%".$search."%")
+        ->paginate(5);
+
+		return view('relawans.index', compact('relawans'));
+
+	}
 }

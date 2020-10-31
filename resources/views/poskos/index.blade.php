@@ -24,14 +24,20 @@
 </section>
 
 <section class="video4 cid-seOsQZdSTD" id="video4-2r">
-    <div class="container">
-        <div class="title-wrapper mb-5">
+    <div style="font-family: Arial, Helvetica, sans-serif">
+        <div class="form-group">
+            <form action="/poskos/search"  method="GET">
+                <input type="text" class="btn mx-auto d-block" name="search" style="width: 50%"  placeholder="Cari Posko .." value="{{ old('search') }}">
+                <input type="submit" value="Cari" class="btn btn-primary mx-auto d-block">
+            </form>
         </div>
+    </div>
+    <div class="container" id="myUL">
         @include('inc.messages')
         @if(count($poskos) > 0)
             @foreach ($poskos as $posko)
 
-            <div class="row align-items-center">
+            <div class="row align-items-center" id="isiPosko">
                 <div class="col-md-4 col-sm-4">
                     <img src="/storage/cover_images/{{$posko->cover_image}}" width="100%" class="rounded"  style="padding-top:15px;padding-bottom:15px;">
                 </div>
@@ -39,15 +45,17 @@
                     <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">
                     <strong><a href="/poskos/{{$posko->id_posko}}">{{$posko->nama_posko}}</a></strong></h5>
                     <small style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
-                        Alamat:
+                        Alamat:<br>
                         {{$posko->alamat_kesehatan}}
                     </small>
                     <small style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                        <br>No Telepon :<br>
                         {{$posko->no_telp_kesehatan}}
                     </small>
                 </div>
             </div>
             @endforeach
+            {{$poskos->links()}}
         @else
         <div class="row align-items-center">
             <div class="col-12 col-lg">

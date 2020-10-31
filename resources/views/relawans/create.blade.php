@@ -19,7 +19,7 @@
 <body>
 <div id="app">
     <main class="container" style="padding: 5% 15%">
-        <h1>Pendaftaran Relawan</h1>
+        <h1>Pendaftaran Relawan SISCO</h1>
         @include('inc.messages')
             {!! Form::open(['action' => 'RelawanController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                 <div class="form-group">
@@ -42,8 +42,6 @@
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     {{Form::radio('jenis_kelamin', 'Female')}}
                     {{Form::label('jenis_kelamin', 'Perempuan')}}
-
-                    {{-- {{Form::text('jenis_kelamin', '', ['class' => 'form-control', 'placeholder' => 'Laki-laki/Perempuan'])}} --}}
                 </div>
                 <div class="form-group">
                     {{Form::label('no_telp', 'Nomor Telepon')}}
@@ -52,6 +50,12 @@
                 <div class="form-group">
                     {{Form::label('email', 'Email')}}
                     {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'example@example.com'])}}
+                </div>
+
+                <div class="form-group">
+                    {{Form::label('id_posko', 'Posko Pilihan')}}
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    {{Form::select('id_posko', $poskos)}}
                 </div>
 
                 <div class="form-group">

@@ -20,30 +20,20 @@
                     <p class="mbr-text">
                         <strong>Address</strong>
                         <br>
-                        <br>1234 Street Name
-                        <br>City, AA 99999
-                        <br>
+                        <br>Jl. Teknik Kimia - Gedung Departemen Teknik Informatika
+                        <br>Kampus Institut Teknologi Sepuluh Nopember Surabaya
+                        <br> Jalan Raya ITS, Sukolilo, Surabaya 60111, Indonesia
                         <br>
                         <br><strong>Contacts</strong>
                         <br>
-                        <br>Email: info@site.com
-                        <br>Phone: +1 (0) 000 0000 001
-                        <br>Fax: +1 (0) 000 0000 002
+                        <br>Email: tinformatika@its.ac.id
+                        <br>Link: <a href="https://its.ac.id/informatika">its.ac.id</a>
+                        <br>Fax : +62-31-5913804
+                        <br>Phone: +62-31-5939212, 5995581, 5994251 (ext 1445, 1446)
                     </p>
                 </div>
-                <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                    <p class="mbr-text">
-                        <strong>Links</strong>
-                        <br>
-                        <br><a class="text-primary" href="https://mobiri.se/">Website builder</a>
-                        <br>
-                        <br><strong>Feedback</strong>
-                        <br>
-                        <br>Please send us your ideas, bug reports, suggestions! Any feedback would be appreciated.
-                    </p>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNveGQ9bfpKFwWzQLLftrR9hNiHwdqQG8&amp;q=Jl. Teknik Kimia, Keputih, Kec. Sukolilo, Kota SBY, Jawa Timur 60111" allowfullscreen=""></iframe></div>
+                <div class="google-map">
+                        <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15830.636219687545!2d112.7973953!3d-7.2795792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa2205c1a620a0936!2sDepartemen%20Teknik%20Informatika!5e0!3m2!1sen!2sid!4v1604127835858!5m2!1sen!2sid" width="420px" height="300px" allowfullscreen=""></iframe></div>
                 </div>
             </div>
             <div class="footer-lower">
@@ -55,39 +45,14 @@
                 <div class="media-container-row mbr-white">
                     <div class="col-sm-6 copyright">
                         <p class="mbr-text mbr-fonts-style display-7">
-                            © Copyright 2025 Mobirise - All Rights Reserved
+                            © Copyright Webpro E - Aulia Dafa Feinard
                         </p>
                     </div>
                     <div class="col-md-6">
                         <div class="social-list align-right">
                             <div class="soc-item">
-                                <a href="https://twitter.com/mobirise" target="_blank">
-                                    <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                <a href="https://www.facebook.com/TeknikInformatikaITS" target="_blank">
                                     <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://www.youtube.com/c/mobirise" target="_blank">
-                                    <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://instagram.com/mobirise" target="_blank">
-                                    <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
-                                    <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://www.behance.net/Mobirise" target="_blank">
-                                    <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                                 </a>
                             </div>
                         </div>
@@ -117,6 +82,7 @@
     <script src="{{asset('assets/datepicker/jquery.datetimepicker.full.js')}}"></script>
     <script src="{{asset('assets/formoid/formoid.min.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @yield('moreJS')
 
 
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
